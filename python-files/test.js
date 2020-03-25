@@ -77,7 +77,8 @@ app.post('/hello', (req,res) =>{
   process.stdout.on('data', function(data) {
 
     const temp = data.toString()
-    res.status(200).send(`hi this is - ${temp}.`)
+    
+    res.status(200).send(`${temp}.`)
   })
   
   })
