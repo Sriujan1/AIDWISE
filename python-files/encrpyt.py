@@ -14,6 +14,8 @@ keygen = su.encrypt(sys.argv[1],5)
 final['key'] = keygen
 name = './'+final['Name']+'.json'
 fname = './json/'+name
+
+
 # with open(fname , 'w') as f :
 #     json.dump(final,f)
 

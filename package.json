@@ -17,6 +17,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
+    "mongodb": "^3.5.5",
+    "mongoose": "^5.9.6",
     "morgan": "^1.9.1",
     "node-openssl-cert": "^0.1.6",
     "node-openssl-p12": "^0.1.8",
