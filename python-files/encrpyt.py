@@ -1,6 +1,9 @@
 import json
 import sys
 import subs_algo as su
+import os
+import pymongo
+from pymongo import MongoClient
 
 name = ''
 final = {}
@@ -9,18 +12,23 @@ with open('./sample.json') as f :
     data = json.load(f)
 
 for i in data:
-    final[i] = su.encrypt(data[i], int(sys.argv[1]))
-keygen = su.encrypt(sys.argv[1],5)
+    final[i] = su.encrypt(data[i],int(sys.argv[1]) ) 
+keygen = su.encrypt(sys.argv[1],5) 
 final['key'] = keygen
-name = './'+final['Name']+'.json'
-fname = './json/'+name
-
-
+# name = './'+final['Name']+'.json'
+# fname = './json/'+name
 # with open(fname , 'w') as f :
 #     json.dump(final,f)
+# print(final)
 
-print(final)
+client = MongoClient()
+client = MongoClient('localhost',27017)
 
+db = client.AidWise
+records = db.records
+records.insert_one(final)
+
+print("Success")
 
 # with open('./Wvmyner levmlev.json') as r :
 #     data1 = json.load(r)

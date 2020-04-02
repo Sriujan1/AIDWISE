@@ -17,7 +17,7 @@ def encrypt(plaintext , key) :
     for j in range(len(all_num)):
         num1[all_num[j]] = all_num[(j+key)%len(all_num)]
 
-    plain_txt = plaintext
+    plain_txt = str(plaintext)
     cipher_txt = [] 
 
     for char in plain_txt: 
