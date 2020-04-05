@@ -29,6 +29,7 @@ const actions = {
 const mutations = {
     newpSignup (state, signup) {
         state.pusers.push(signup)
+        state.ploggedIn = true
        // router.push('./')
       },
     newpLogin (state, login) {

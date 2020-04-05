@@ -47,7 +47,7 @@
             <div>
                <!-- <router-link to="/patient"> <b-button class="mt-3" type="submit" block>Submit</b-button></router-link>
 -->
-               <b-button class="btn btn-outline-dark mt-3" block id="class" variant="light" @click="$bvModal.show('bv-modal-example')">START...</b-button>
+               <b-button class="btn btn-outline-dark mt-3" block id="class" variant="light" v-on:click="onsubmit" @click="$bvModal.show('bv-modal-example')">START...</b-button>
                <b-modal id="bv-modal-example" hide-footer>
                 <div class="d-block text-center">
                     <div id="gif"></div>
@@ -77,10 +77,19 @@ export default {
         password: ''
     }
   },methods: {
-     // submit(){
-         //if you want to send any data into server before redirection then you can do it here
-       // this.$router.push("/patient")
-      //},
+        
+         onsubmit: function () {
+            // alert('Prescription has been changed!')
+            var _this = this
+            axios.post('http://localhost:4000/assist/')
+               .then((response) =>{
+                    console.log(response.data)
+                })
+                .catch((error) => {
+                     console.log(error)
+                })
+
+         },
        ...mapActions(['addpUsers']),
     onSubmit (e) {
       e.preventDefault()
