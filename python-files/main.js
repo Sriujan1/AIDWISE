@@ -1,6 +1,3 @@
-var fs=require('fs');
-var data=fs.readFileSync('sample.json', 'utf8');
-var words=JSON.parse(data);
 const express = require('express')
 const bodyParser = require('body-parser');
 const cors = require('cors')
@@ -20,7 +17,7 @@ app.listen(4000 , () => {
 app.post('/encrypt', (req, res) => {
     const spawn = require('child_process').spawn
 
-    var process = spawn('python' , ['./encrpyt.py' , req.body.key ])
+    var process = spawn('python' , ['./encrpyt.py'])
 
     process.stdout.on('data', (data) => {
         res.send(data.toString())
@@ -40,7 +37,7 @@ app.post('/edit', (req, res) => {
 app.post('/assist', (req, res) => {
     const spawn = require('child_process').spawn
     
-    var process = spawn('python' , ['./assist.py'])
+    var process = spawn('python' , ['./assist.py', req.body.name, req.body.pname, req.body.pId])
 
     process.stdout.on('data', (data) => {
         res.send(data.toString())
@@ -56,8 +53,4 @@ app.post('/decrypt', (req, res) => {
     process.stdout.on('data', (data) => {
         res.send(data.toString())
     })
-})
-
-app.post('/print', (req,res) => {
-    res.send(words)
 })

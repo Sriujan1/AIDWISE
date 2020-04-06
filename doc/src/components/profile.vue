@@ -140,7 +140,7 @@ h3 {
 
 #gif {
   background: url('voice1.gif');
-  width: 70vh;
+  width: 65vh;
   height: 360px;
 }
 </style>

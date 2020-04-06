@@ -87,7 +87,7 @@ export default {
     },
     mounted: function () {
         var _this = this
-    axios.post('http://localhost:4000/print')
+    axios.post('http://localhost:3000/print')
       .then((response) =>{
            console.log(response.data)
          _this.print = response.data

@@ -2,7 +2,7 @@ import time
 import json
 from playsound import playsound
 from recognize import *
-
+import sys
 
 if __name__ == '__main__':
 
@@ -52,5 +52,12 @@ if __name__ == '__main__':
     if text["error"]:
         print("ERROR: {}".format(text["error"]))
 
+    with open('sample.json') as f:
+        data = json.load(f)
+    data['Doctor'] = sys.argv[1]
+    data['patient'] = sys.argv[2]
+    data['patientId'] = sys.argv[3]
+    
     with open('sample.json','w') as fp:
         json.dump(d,fp)  
+

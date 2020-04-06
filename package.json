@@ -2,9 +2,9 @@
   "name": "PDF",
   "version": "1.0.0",
   "description": "",
-  "main": "pdf_maker.js",
+  "main": "test1.js",
   "scripts": {
-    "dev": "nodemon ./server.js"
+    "dev": "nodemon display.js"
   },
   "keywords": [],
   "author": "",

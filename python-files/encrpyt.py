@@ -29,4 +29,6 @@ db = client.AidWise
 records = db.records
 records.insert_one(final)
 
+os.remove("sample.json")
+
 print("Success")
