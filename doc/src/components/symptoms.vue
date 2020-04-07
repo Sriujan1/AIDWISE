@@ -53,7 +53,7 @@
                 </div>
                <router-link to="/symptoms"> <b-button class="mt-3" type="submit"  block>Submit</b-button></router-link>
                 </b-modal>  
-        <b-button class="btn"  >submit</b-button>
+        <b-button class="btn" v-on:click="submit" >submit</b-button>
     </div>
 </template>
 
@@ -83,6 +83,15 @@ export default {
                      console.log(error)
                 })
 
+         },
+         submit: function () {
+           axios.post('http://localhost:4000/encrypt/')
+              .then((response) => {
+                console.log('Data is encrypted!!')
+              })
+              .catch((error) => {
+                console.log(error)
+              })
          }
     },
     mounted: function () {
