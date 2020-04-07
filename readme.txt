@@ -12,25 +12,6 @@ Steps to run this Project:
 Thanks you for reading the Readme.
 Hope you have a nice Quarantine and stay home.
 
-
-
-
-For Sriujan:
-1. Edit the file assist.py
-2. sample.json should contain this format
-{
-    "Id": "1322",
-    "Name": "Atharva",
-    "Symptoms": "Cold and Cough",
-    "Daignosis": "Local Virus Infection",
-    "Prescription": "Paracetamol",
-    "Advice": "Dont eat cold foods",
-    "key": "9",
-}
-    and this should be present else it will not run.
-3. Please check the assist.py file and make it work.!!!!
-
-
 For Harshali:
 1. Pass me the name of doctor, patient Name and patient Id by the names : "name" , "pname" , "pId"
 2. Buttons corrections
