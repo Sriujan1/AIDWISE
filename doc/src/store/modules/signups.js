@@ -36,7 +36,7 @@ const mutations = {
   },
   newSignup (state, signup) {
     state.users.push(signup)
-    router.push('./')
+    router.push('./login')
   },
   newLogin (state, login) {
     state.currentUser = state.users.filter(p => login.contact === p.contact && login.password === p.password)

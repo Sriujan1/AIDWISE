@@ -46,14 +46,14 @@
     </div>
     </div></b-col>
     </b-row>
-                <b-button class="btn" @click="$bvModal.show('bv-modal-example')" v-on:click="onsubmit">Edit</b-button>
+                <b-button class="btn btn-outline-dark" variant="light" block @click="$bvModal.show('bv-modal-example')" v-on:click="onsubmit">Edit</b-button>
                     <b-modal id="bv-modal-example" hide-footer>
                 <div class="d-block text-center">
                     <div id="gif"></div>
                 </div>
-               <router-link to="/symptoms"> <b-button class="mt-3" type="submit"  block>Submit</b-button></router-link>
+               <router-link to="/symptoms"> <b-button class="innerbtn" type="submit"  block>Submit</b-button></router-link>
                 </b-modal>  
-        <b-button class="btn" v-on:click="submit" >submit</b-button>
+        <b-button class="btn btn-outline-primary" variant="light" v-on:click="submit" block>Submit</b-button>
     </div>
 </template>
 
@@ -186,7 +186,10 @@ export default {
 }
 
 .btn {
-    margin-bottom: 100px;
+  margin-left: 140px;
+    width: 80%;
+    height: 6vh;
+    margin-bottom: 50px;
 }
 
 #gif {
@@ -217,5 +220,9 @@ h3 {
   color: white;
   text-align: left;
   }
-
+.innerbtn {
+  margin-top: 20px;
+  width: 100%;
+  margin-left: 3px;
+}
 </style>

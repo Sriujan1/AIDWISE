@@ -32,14 +32,13 @@
             </div>
             <br>
             <div>
-                <label for="pid">Patient Name: </label>
+                <label for="pname">Patient Name: </label>
                 <input type="text" placeholder="Enter name" v-model="name">
             </div>
-            <br>
-            <div>
+           <!-- <div>
                 <label for="pid">Password: </label>
                 <input type="password" placeholder="Enter password" v-model="password">
-            </div>
+            </div> -->
             <br>
             <div>
   <button type="submit" class="btn btn-primary" id="btn" style="margin-left:5%">Submit</button>
@@ -73,15 +72,22 @@ export default {
     return {
         modalShow: false,
         pid: '',
-        name: '',
-        password: ''
+        name: ''
+       // password: ''
     }
   },methods: {
         
          onsubmit: function () {
             // alert('Prescription has been changed!')
             var _this = this
-            axios.post('http://localhost:4000/assist/')
+            axios.post('http://localhost:4000/assist/', {
+                pID: this.pid,
+                pname: this.name
+            }, {
+               headers: {
+                 'Content-Type': 'application/json'
+               }
+            })
                .then((response) =>{
                     console.log(response.data)
                 })
@@ -90,15 +96,16 @@ export default {
                 })
 
          },
-       ...mapActions(['addpUsers']),
+       ...mapActions(['addpUsers','addpusers']),
     onSubmit (e) {
       e.preventDefault()
       const puser = {
-        pid: this.pid,
-        name: this.name,
-        password: this.password
+        pID: this.pid,
+        pname: this.name,
+       // password: this.password
       }
       this.addpUsers(puser)
+     // this.addpusers(puser)
      // router.push('./plogin')
     }
   },

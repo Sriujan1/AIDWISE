@@ -115,7 +115,7 @@ export default {
     ...mapGetters(['user'])
   },
   methods: {
-    ...mapActions(['addUsers']),
+    ...mapActions(['addUsers','addpUsers']),
     onSubmit (e) {
       e.preventDefault()
       const user = {
@@ -126,6 +126,7 @@ export default {
         register: this.register
       }
       this.addUsers(user)
+      this.addpUsers(user)
       router.push('./login')
     },
     toggleshowpassword () {
@@ -148,7 +149,7 @@ export default {
   background-image: url('268.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 600px;
+  height: 400px;
 }
 #app {
   font-family:'Times New Roman', Times, serif;

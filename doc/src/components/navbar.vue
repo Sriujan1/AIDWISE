@@ -22,16 +22,16 @@
         <a class="nav-link"> Sign up </a>
         </router-link>
       </li>
-      <li class="nav-item ">
+   <!--   <li class="nav-item ">
         <router-link to="/plogin">
         <a class="nav-link"> Patients </a>
         </router-link>
-      </li>
+      </li> -->
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+ <!--   <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    </form>  -->
   </div>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent" v-for="currentUser in user" :key="currentUser.name">
@@ -51,10 +51,10 @@
         <a class="nav-link" @click="onSubmit"> Logout </a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+  <!--  <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    </form> -->
   </div>
 </nav>
 </template>
