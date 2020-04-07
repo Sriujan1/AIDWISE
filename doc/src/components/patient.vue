@@ -66,7 +66,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['patient','user','plogIn'])
+    ...mapGetters(['user','plogIn'])
   }
 }
 </script>

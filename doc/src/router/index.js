@@ -1,12 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import home from '@/components/home'
 import login from '@/components/login'
 import signup from '@/components/signup'
-import home from '@/components/home'
 import profile from '@/components/profile'
 import patient from '@/components/patient'
 import symptoms from '@/components/symptoms'
 import plogin from '@/components/plogin'
+import modal from '@/components/modal'
+import symptoms1 from '@/components/symptoms1'
 
 
 
@@ -28,7 +30,7 @@ export default new Router({
     },
     {
       path: '/',
-      name: 'home',
+      name: '/home',
       component: home
     },
     {
@@ -50,6 +52,16 @@ export default new Router({
       path: '/plogin',
       name: 'plogin',
       component: plogin
+    },
+    {
+      path: '/modal',
+      name: 'modal',
+      component: modal
+    },
+    {
+      path: '/symptoms1',
+      name: 'symptoms1',
+      component: symptoms1
     }
   ]
 })

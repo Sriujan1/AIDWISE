@@ -126,7 +126,7 @@ export default {
         register: this.register
       }
       this.addUsers(user)
-      this.addpUsers(user)
+    //  this.addpUsers(user)
       router.push('./login')
     },
     toggleshowpassword () {

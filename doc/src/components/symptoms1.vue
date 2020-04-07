@@ -46,8 +46,8 @@
     </div>
     </div></b-col>
     </b-row>
-                <b-button class="btn btn-outline-dark" variant="light" block @click="$bvModal.show('bv-modal-example')" v-on:click="onsubmit">Edit</b-button>
-                  <modal />
+              <!--  <b-button class="btn btn-outline-dark" variant="light" block @click="$bvModal.show('bv-modal-example')" v-on:click="onsubmit">Edit</b-button>
+                  <modal /> -->
              <!--       <b-modal id="bv-modal-example" hide-footer>
                 <div class="d-block text-center">
                     <div id="gif"></div>
@@ -72,20 +72,20 @@ export default {
         }
     },
     methods: {
-         onsubmit: function () {
-            // alert('Prescription has been changed!')
-            var _this = this
-            axios.post('http://localhost:4000/edit/')
-               .then((response) =>{
-                    console.log(response.data)
-                    _this.print = response.data
+        //  onsubmit: function () {
+        //     // alert('Prescription has been changed!')
+        //     var _this = this
+        //     axios.post('http://localhost:4000/edit/')
+        //        .then((response) =>{
+        //             console.log(response.data)
+        //             _this.print = response.data
                     
-                })
-                .catch((error) => {
-                     console.log(error)
-                })
+        //         })
+        //         .catch((error) => {
+        //              console.log(error)
+        //         })
 
-         },
+        //  },
          submit: function () {
            axios.post('http://localhost:4000/encrypt/')
               .then((response) => {
@@ -109,7 +109,7 @@ export default {
       })
 },
  computed: {
-    ...mapGetters(['plogIn'])
+    ...mapGetters(['allpUsers','plogIn'])
   }
 
 }
