@@ -12,14 +12,9 @@ if __name__ == '__main__':
     d = {}
     text = 'None'
 
-    playsound('./mp3/Say the name please.mp3')
-    text = recognize_speech_from_mic(recognizer, microphone)
-    d["Name"] = text["transcription"]
-    if not text["Success"]:
-        print("I didn't catch that. What did you say?\n")              
-    if text["error"]:
-        print("ERROR: {}".format(text["error"]))
-    
+    d['Id'] = sys.argv[3] 
+    d['Name'] = sys.argv[2]
+
     playsound("./mp3/Say the Symptoms.mp3")
     text = recognize_speech_from_mic(recognizer, microphone)
     d["Symptoms"] = text["transcription"]
@@ -52,11 +47,7 @@ if __name__ == '__main__':
     if text["error"]:
         print("ERROR: {}".format(text["error"]))
 
-    with open('sample.json') as f:
-        data = json.load(f)
-    data['Doctor'] = sys.argv[1]
-    data['patient'] = sys.argv[2]
-    data['patientId'] = sys.argv[3]
+    d['Dname'] = sys.argv[1]
     
     with open('sample.json','w') as fp:
         json.dump(d,fp)  
