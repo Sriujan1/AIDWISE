@@ -100,7 +100,7 @@ export default {
     onSubmit (e) {
       e.preventDefault()
       const puser = {
-        pID: this.pid,
+        pId: this.pid,
         pname: this.name,
        // password: this.password
       }

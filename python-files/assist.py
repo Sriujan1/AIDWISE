@@ -51,4 +51,4 @@ if __name__ == '__main__':
     
     with open('sample.json','w') as fp:
         json.dump(d,fp)  
-
+print('Success')
