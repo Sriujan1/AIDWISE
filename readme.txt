@@ -8,11 +8,3 @@ Steps to run this Project:
 7. Open another Terminal
 8. Type - "cd python-files" and then "node main.js"
 9. And tada the project is running!!!
-
-Thanks you for reading the Readme.
-Hope you have a nice Quarantine and stay home.
-
-For Harshali:
-1. Pass me the name of doctor, patient Name and patient Id by the names : "name" , "pname" , "pId"
-2. Buttons corrections
-3. ***Good UI***

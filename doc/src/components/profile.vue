@@ -46,7 +46,7 @@
             <div>
                <!-- <router-link to="/patient"> <b-button class="mt-3" type="submit" block>Submit</b-button></router-link>
 -->
-               <b-button class="btn btn-outline-dark mt-3" block id="class" variant="light" v-on:click="onsubmit" @click="$bvModal.show('bv-modal-example')">START...</b-button>
+               <b-button class="btn btn-outline-dark mt-3" block id="class" variant="light" v-on:click="onclick" @click="$bvModal.show('bv-modal-example')">START...</b-button>
                <b-modal id="bv-modal-example" hide-footer>
                 <div class="d-block text-center">
                     <div id="gif"></div>
@@ -72,17 +72,37 @@ export default {
     return {
         modalShow: false,
         pid: '',
-        name: ''
+        name: '',
+       // dname: currentUser.name
        // password: ''
     }
   },methods: {
-        
-         onsubmit: function () {
+        onclick: function () {
+            var _this = this
+            axios.post('http://localhost:4000/assist/' , {
+              pId: this.pid,
+              pname: this.name
+            }, {
+              headers: {
+                'Content-Type': 'application/json'
+              }
+            })
+               .then((response) =>{
+                    console.log(response.data)
+                    _this.print = response.data
+                    
+                })
+                .catch((error) => {
+                     console.log(error)
+                })
+        },
+     /*    onsubmit: function () {
             // alert('Prescription has been changed!')
             var _this = this
             axios.post('http://localhost:4000/assist/', {
-                pID: this.pid,
-                pname: this.name
+                pId: this.pid,
+                pname: this.name,
+                name: this.dname
             }, {
                headers: {
                  'Content-Type': 'application/json'
@@ -95,8 +115,8 @@ export default {
                      console.log(error)
                 })
 
-         },
-       ...mapActions(['addpUsers','addpusers']),
+         },*/
+       ...mapActions(['addpUsers','user']),
     onSubmit (e) {
       e.preventDefault()
       const puser = {
