@@ -47,6 +47,11 @@
         <a class="nav-link"> Profile </a>
         </router-link>
       </li>
+       <li class="nav-item ">
+        <router-link to="/patient">
+        <a class="nav-link"> History </a>
+        </router-link>
+      </li>
       <li class="nav-item ">
         <a class="nav-link" @click="onSubmit"> Logout </a>
       </li>

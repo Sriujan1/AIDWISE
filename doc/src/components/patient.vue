@@ -1,21 +1,20 @@
 <template>
 <div>  
   <div>
-    <div id="back" class="container mt-5 mb-5" style="width: 700px" v-if="plogIn === false">
+    <div id="back" class="container mt-5 mb-5" style="width: 700px">
       <form  v-on:submit="onSubmit">
         <div class="col-md-6">
-        <label for="contact">Patient id:</label>
-        <input type="text" class="form-control" id="contact" v-model="pid" required>
+          <label for="contact">Patient id:</label>
+          <input type="text" class="form-control" id="contact" v-model="pid" required>
         </div><br>
-  <div>
-  <button type="submit" class="btn btn-primary" id="btn" style="margin-left:5%" v-on:click="onSubmit">Submit</button>
-  </div>
+      <button type="submit" class="btn btn-primary" id="btn" style="margin-left:5%" v-on:click="onSubmit">Submit</button>
 
       </form>
     </div>
 
   </div>
-  <div v-if="plogIn === true"> 
+
+  <!--<div v-if="plogIn === true"> 
 <div class="card text-white bg-dark mb-3" style="margin:5%" v-for="patientuser in patient" :key="patientuser.name" >
   <div class="card-body text-white">
       <div class="row">
@@ -31,8 +30,8 @@
       </div> 
   </div>
 </div>
-</div>
-<br>
+-->
+
 </div>
 </template>
 
@@ -48,7 +47,8 @@ export default {
   },
   data () {
     return {
-      pid: ''
+      pid: '',
+      print: {}
       // myjson: samjson 
     }
   },
@@ -61,8 +61,29 @@ export default {
       }
       this.plogin(plogin)
     },
-    onSubmit () {
-      this.$router.push('/symptoms')
+
+     onSubmit: function () {
+            // alert('Prescription has been changed!')
+            var _this = this
+            axios.post('http://localhost:4000/decrypt/')
+               .then((response) =>{
+                    console.log(response.data)
+                    _this.print = response.data
+                })
+                .catch((error) => {
+                     console.log(error)
+                })
+
+         }
+  },
+  methods: {
+    ...mapActions(['plogin']),
+    onSubmit (e) {
+      e.preventDefault()
+      const plogin = {
+        pid: this.pid
+      }
+      this.plogin(plogin)
     }
   },
   computed: {

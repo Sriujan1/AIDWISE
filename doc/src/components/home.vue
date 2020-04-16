@@ -94,7 +94,7 @@ export default {
   background-image: url('6.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 550px;
+  height: 600px;
 } 
 h2 {
   color: black;

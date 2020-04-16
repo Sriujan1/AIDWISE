@@ -9,6 +9,9 @@ import symptoms from '@/components/symptoms'
 import plogin from '@/components/plogin'
 import modal from '@/components/modal'
 import symptoms1 from '@/components/symptoms1'
+import history from '@/components/history'
+import history1 from '@/components/history1'
+
 
 
 
@@ -62,6 +65,16 @@ export default new Router({
       path: '/symptoms1',
       name: 'symptoms1',
       component: symptoms1
+    },
+    {
+      path: '/history',
+      name: 'history',
+      component: history
+    },
+    {
+      path: '/history1',
+      name: 'history1',
+      component: history1
     }
   ]
 })

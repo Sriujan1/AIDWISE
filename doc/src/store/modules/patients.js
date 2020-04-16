@@ -33,13 +33,15 @@ const mutations = {
        // router.push('./')
       },
     newpLogin (state, login) {
-        state.patientUser = state.pusers.filter(p => login.id === p.id && login.password === p.password)
-        if (state.patientUser.length === 0) {
-          alert('Patient not Registered')
-        } else {
-          state.ploggedIn = true
-          router.push('./symptoms')
-        }
+        state.patientUser = state.pusers.filter(p => login.id === p.id)
+        router.push('./history1')
+        // state.patientUser = state.pusers.filter(p => login.id === p.id && login.password === p.password)
+        // if (state.patientUser.length === 0) {
+        //   alert('Patient not Registered')
+        // } else {
+        //   state.ploggedIn = true
+        //   router.push('./symptoms')
+        // }
       },
     logot (state) {
         state.ploggedIn = false
